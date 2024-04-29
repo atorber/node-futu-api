@@ -1,10 +1,10 @@
 import { Futu } from '../src/index.js';
 
 const futu = new Futu();
-const pwd = '' // 交易密码
 const code = "03888"; // 金山软件
-const accID = ''
+const accID = ''; // 交易账户, 通过GetAccList获取
 const trdEnv = 1; // 1: 真实环境 0: 模拟环境
+const pwd = ''; // 交易密码
 
 // 等待登录成功后再执行
 (async () => {
@@ -14,7 +14,7 @@ const trdEnv = 1; // 1: 真实环境 0: 模拟环境
   }
 
   // 订阅
-  await futu.Sub(code)
+  // await futu.Sub(code)
 
   // 获取订阅状态
   // await futu.GetSubInfo()
@@ -65,13 +65,13 @@ const trdEnv = 1; // 1: 真实环境 0: 模拟环境
   // await futu.UnSub(code)
 
   // 获取交易业务账户列表
-  // await futu.GetAccList()
+  await futu.GetAccList()
 
   // 解锁交易
-  await futu.UnlockTrade(pwd)
+  // await futu.UnlockTrade(pwd)
 
   // 设置交易账户
-  futu.SetAcc(accID, trdEnv)
+  // futu.SetAcc(accID, trdEnv)
 
   // 查询账户资金
   // await futu.GetFunds()
@@ -84,5 +84,27 @@ const trdEnv = 1; // 1: 真实环境 0: 模拟环境
 
   // 下单
   // await futu.PlaceOrder(code, price, 200)
-  await futu.GetOrderList()
+
+  // 改单撤单
+  // const orderID = ''
+  // await futu.ModifyOrder(orderID, price, 200)
+
+  // 查询未完成订单列表
+  // await futu.GetOrderList()
+
+  // 查询历史订单列表
+  // await futu.GetHistoryOrderList()
+
+  // 查询订单费用
+  // await futu.GetOrderFee(['orderID'])
+
+  // 订阅交易推送
+  // await futu.SubAccPush([accID])
+
+  // 查询当日成交
+  // await futu.GetOrderFillList()
+
+  // 查询历史成交
+  // await futu.GetHistoryOrderFillList()
+
 })()
