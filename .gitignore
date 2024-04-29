@@ -1,0 +1,9 @@
+sample/node_modules
+examples/node_modules
+src/node_modules
+node_modules
+cha/draws
+cha/images
+tests
+package-lock.json
+examples/dev.ts
